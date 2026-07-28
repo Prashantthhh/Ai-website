@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAIRADOX — AI Automation Studio</title>
+  <meta name="description" content="PAIRADOX — AI automation studio by Prashasth Kamidri and Vyshnav Katamreddy. Voice agents that book appointments, LinkedIn lead scrapers, and workflows that run themselves." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230C0C0E'/><circle cx='50' cy='50' r='22' fill='none' stroke='white' stroke-width='6'/><circle cx='50' cy='50' r='6' fill='white'/></svg>" />
+</head>
+<body>
+
+  <!-- ============================================================
+       All team/contact info is filled in. One "EDIT:" marker left:
+       the hero metrics — swap in real stats as they grow.
+       ============================================================ -->
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <span class="preloader-count mono" id="preloaderCount">00</span>
+      <div class="preloader-bar"><span id="preloaderFill"></span></div>
+      <span class="mono preloader-label">INITIALIZING AUTOMATION CORE</span>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress"><span id="scrollProgressFill"></span></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-logo">
+      <svg width="26" height="26" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <rect width="100" height="100" rx="24" fill="var(--surface)"/>
+        <circle cx="50" cy="50" r="22" stroke="white" stroke-width="6"/>
+        <circle cx="50" cy="50" r="6" fill="white"/>
+      </svg>
+      <span>PAIRADOX</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services" data-hover>Services</a>
+      <a href="#projects" data-hover>Projects</a>
+      <a href="#why" data-hover>Why us</a>
+      <a href="#team" data-hover>Team</a>
+    </nav>
+    <div class="nav-right">
+      <span class="mono nav-status"><span class="status-dot"></span>AGENTS ONLINE</span>
+      <a href="#contact" class="btn btn-pill btn-light" data-hover>Automate</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#why">Why us</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <canvas id="topologyCanvas" aria-hidden="true"></canvas>
+      <div class="hero-gradient" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">
+          <span class="mono pill-tag">AI AUTOMATION STUDIO</span>
+          <span class="mono pill-tag pill-tag-ghost">VOICE // LEADS // WORKFLOWS</span>
+        </div>
+
+        <h1 class="display" aria-label="PAIRADOX">
+          <span class="line-mask"><span class="line">PAIRADOX</span></span>
+          <span class="line-mask"><span class="line"><em>Automation, unified.</em></span></span>
+        </h1>
+
+        <p class="hero-sub reveal">
+          We build AI automations that collapse busywork into a single responsive core —
+          voice agents that book your appointments, scrapers that fill your pipeline,
+          workflows that run themselves.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="#contact" class="btn btn-pill btn-light" data-hover>Automate with us</a>
+          <a href="#projects" class="btn btn-pill btn-ghost" data-hover>See our work
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+        </div>
+
+        <!-- EDIT: swap in your real numbers as they grow -->
+        <div class="hero-metrics reveal">
+          <div class="metric">
+            <span class="metric-value mono" data-count="99.9" data-decimals="1">0</span><span class="metric-unit mono">%</span>
+            <span class="metric-label mono">AGENT UPTIME</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric">
+            <span class="metric-value mono" data-count="1" data-decimals="0">0</span><span class="metric-unit mono">s</span>
+            <span class="metric-label mono">CALL PICKUP</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric">
+            <span class="metric-value mono" data-count="40" data-decimals="0">0</span><span class="metric-unit mono">+</span>
+            <span class="metric-label mono">HRS SAVED / WEEK</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll mono" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track mono">
+        <span>VOICE AGENTS&nbsp;&nbsp;✦&nbsp;&nbsp;LEAD SCRAPERS&nbsp;&nbsp;✦&nbsp;&nbsp;WORKFLOW AUTOMATION&nbsp;&nbsp;✦&nbsp;&nbsp;AI INTEGRATIONS&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
+        <span>VOICE AGENTS&nbsp;&nbsp;✦&nbsp;&nbsp;LEAD SCRAPERS&nbsp;&nbsp;✦&nbsp;&nbsp;WORKFLOW AUTOMATION&nbsp;&nbsp;✦&nbsp;&nbsp;AI INTEGRATIONS&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
+        <span>VOICE AGENTS&nbsp;&nbsp;✦&nbsp;&nbsp;LEAD SCRAPERS&nbsp;&nbsp;✦&nbsp;&nbsp;WORKFLOW AUTOMATION&nbsp;&nbsp;✦&nbsp;&nbsp;AI INTEGRATIONS&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ================= SERVICES (bento) ================= -->
+    <section class="section" id="services">
+      <div class="section-head reveal">
+        <span class="mono section-index">01 / WHAT WE DO</span>
+        <h2 class="heading-lg">Manual chaos,<br /><em>automated order.</em></h2>
+        <p class="section-sub">We design, build and run AI automations for businesses — voice, data and workflow systems that keep working while you sleep.</p>
+      </div>
+
+      <div class="bento">
+        <!-- Chart panel — lead generation -->
+        <article class="card bento-a reveal" data-tilt>
+          <div class="card-head">
+            <span class="mono card-tag">LEAD PIPELINE</span>
+            <span class="mono card-tag card-tag-live"><span class="status-dot"></span>LIVE</span>
+          </div>
+          <div class="chart" id="barChart" aria-hidden="true">
+            <div class="chart-bar" style="--h:34%"></div>
+            <div class="chart-bar" style="--h:52%"></div>
+            <div class="chart-bar" style="--h:41%"></div>
+            <div class="chart-bar" style="--h:68%"></div>
+            <div class="chart-bar" style="--h:57%"></div>
+            <div class="chart-bar" style="--h:79%"></div>
+            <div class="chart-bar" style="--h:64%"></div>
+            <div class="chart-bar" style="--h:92%"></div>
+            <div class="chart-bar" style="--h:73%"></div>
+            <div class="chart-bar" style="--h:98%"></div>
+          </div>
+          <div class="card-foot">
+            <h3>AI lead generation</h3>
+            <p>Scraping and enrichment flows that keep your CRM full of qualified prospects — no manual prospecting, ever.</p>
+          </div>
+        </article>
+
+        <!-- Terminal panel — voice agents -->
+        <article class="card bento-b reveal" data-tilt>
+          <div class="card-head">
+            <span class="mono card-tag">VOICE AGENT</span>
+            <div class="term-dots"><i></i><i></i><i></i></div>
+          </div>
+          <div class="terminal mono" id="terminal">
+            <div class="term-line"><span class="term-time">00:01</span> call.inbound — answered in <b>0.8s</b></div>
+            <div class="term-line"><span class="term-time">00:07</span> intent &nbsp;&nbsp;&nbsp;&nbsp;— appointment.booking</div>
+            <div class="term-line"><span class="term-time">00:23</span> calendar &nbsp;&nbsp;— slot found → <b>confirmed</b></div>
+            <div class="term-line"><span class="term-time">00:31</span> sms.confirm — delivered</div>
+            <div class="term-line term-cursor"><span class="term-time">00:32</span> agent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— listening<span class="caret">▌</span></div>
+          </div>
+          <div class="card-foot">
+            <h3>Voice AI, live 24/7</h3>
+            <p>Natural phone conversations that end in booked appointments — no hold music, no missed calls.</p>
+          </div>
+        </article>
+
+        <!-- Ring / radial -->
+        <article class="card bento-c reveal" data-tilt>
+          <div class="card-head"><span class="mono card-tag">HANDED OFF</span></div>
+          <div class="ring-wrap" aria-hidden="true">
+            <svg viewBox="0 0 120 120" class="ring-svg">
+              <circle cx="60" cy="60" r="50" class="ring-bg"/>
+              <circle cx="60" cy="60" r="50" class="ring-fg" id="ringFg"/>
+            </svg>
+            <div class="ring-center">
+              <span class="mono ring-value" data-count="87" data-decimals="0">0</span><span class="mono ring-unit">%</span>
+            </div>
+          </div>
+          <div class="card-foot">
+            <h3>Work automated</h3>
+            <p>The share of repetitive ops our clients hand over to agents and pipelines.</p>
+          </div>
+        </article>
+
+        <!-- Wide statement -->
+        <article class="card bento-d reveal">
+          <p class="bento-statement">“Every repetitive task is a system waiting to be built. We build it once — <em>it runs forever.</em>”</p>
+          <span class="mono card-tag">STUDIO PRINCIPLE — 001</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="section section-alt" id="projects">
+      <div class="section-head reveal">
+        <span class="mono section-index">02 / PROJECTS</span>
+        <h2 class="heading-lg">Shipped, deployed,<br /><em>running.</em></h2>
+      </div>
+
+      <div class="momentum-rows">
+        <div class="momentum-row reveal" data-hover>
+          <span class="mono momentum-num">001</span>
+          <h3>Voice Agent — Appointment Booking</h3>
+          <p>An AI receptionist that answers calls, understands intent, checks the calendar and books the appointment end-to-end.</p>
+          <span class="momentum-arrow" aria-hidden="true">→</span>
+        </div>
+        <div class="momentum-row reveal" data-hover>
+          <span class="mono momentum-num">002</span>
+          <h3>AI Lead Scraper — LinkedIn</h3>
+          <p>An automated prospecting engine that scrapes, enriches and delivers qualified LinkedIn leads straight to your pipeline.</p>
+          <span class="momentum-arrow" aria-hidden="true">→</span>
+        </div>
+        <div class="momentum-row reveal" data-hover>
+          <span class="mono momentum-num">003</span>
+          <h3>Custom workflow automations</h3>
+          <p>Bespoke pipelines across your stack — CRMs, calendars, sheets, APIs — stitched into one self-running system.</p>
+          <span class="momentum-arrow" aria-hidden="true">→</span>
+        </div>
+        <a href="#contact" class="momentum-row reveal" data-hover>
+          <span class="mono momentum-num">004</span>
+          <h3>Your project — next</h3>
+          <p>Tell us the busywork. We'll return a system.</p>
+          <span class="momentum-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= WHY US ================= -->
+    <section class="section" id="why">
+      <div class="section-head reveal">
+        <span class="mono section-index">03 / WHY US</span>
+        <h2 class="heading-lg">Trust is a<br /><em>property, not a promise.</em></h2>
+      </div>
+
+      <div class="integrity-grid">
+        <article class="card integrity-card reveal" data-tilt>
+          <span class="mono card-tag">OWNED</span>
+          <h3>You own the system</h3>
+          <p>Code, prompts, integrations and data — all yours. No black boxes, no lock-in, no rented magic.</p>
+        </article>
+        <article class="card integrity-card reveal" data-tilt>
+          <span class="mono card-tag">MEASURED</span>
+          <h3>ROI you can read</h3>
+          <p>Every automation reports what it earned you — hours saved, leads captured, calls answered.</p>
+        </article>
+        <article class="card integrity-card reveal" data-tilt>
+          <span class="mono card-tag">MAINTAINED</span>
+          <h3>We stay after launch</h3>
+          <p>Monitoring, iteration and support are part of the build. If something breaks, it pages us — not you.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= TEAM ================= -->
+    <section class="section section-alt" id="team">
+      <div class="section-head reveal">
+        <span class="mono section-index">04 / TEAM</span>
+        <h2 class="heading-lg">The humans behind<br /><em>the machines.</em></h2>
+        <p class="section-sub">Two builders, one core.</p>
+      </div>
+
+      <div class="team-grid">
+
+        <article class="card team-card reveal" data-tilt>
+          <div class="team-avatar mono">PK</div>
+          <h3 class="team-name">Prashasth Kamidri</h3>
+          <span class="mono team-role">CO-FOUNDER</span>
+          <div class="team-links">
+            <a href="https://www.linkedin.com/in/prashasth-kamidri-794a63288/" target="_blank" rel="noopener" aria-label="Prashasth on LinkedIn" data-hover>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            </a>
+            <a href="https://github.com/prashasthh" target="_blank" rel="noopener" aria-label="Prashasth on GitHub" data-hover>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.97c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.7 5.38-5.26 5.67.41.35.77 1.05.77 2.12v3.14c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=utdprash@gmail.com" target="_blank" rel="noopener" aria-label="Email Prashasth" data-hover>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="card team-card reveal" data-tilt>
+          <div class="team-avatar mono">VK</div>
+          <h3 class="team-name">Vyshnav Katamreddy</h3>
+          <span class="mono team-role">CO-FOUNDER</span>
+          <div class="team-links">
+            <a href="https://www.linkedin.com/in/vyshnav-katamreddy-29397a41a/" target="_blank" rel="noopener" aria-label="Vyshnav on LinkedIn" data-hover>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            </a>
+            <a href="https://github.com/Vysh-katamreddy" target="_blank" rel="noopener" aria-label="Vyshnav on GitHub" data-hover>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.97c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.7 5.38-5.26 5.67.41.35.77 1.05.77 2.12v3.14c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vyshnavrei@gmail.com" target="_blank" rel="noopener" aria-label="Email Vyshnav" data-hover>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= CONTACT / CTA ================= -->
+    <section class="section contact" id="contact">
+      <div class="contact-inner reveal">
+        <span class="mono section-index">05 / INITIALIZE</span>
+        <h2 class="display-sm">
+          <span class="line-mask"><span class="line">Ready to</span></span>
+          <span class="line-mask"><span class="line"><em>automate?</em></span></span>
+        </h2>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=utdprash@gmail.com&su=Project%20inquiry%20—%20PAIRADOX" target="_blank" rel="noopener" class="contact-email" data-hover>utdprash@gmail.com</a>
+        <div class="hero-actions">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=utdprash@gmail.com&su=Project%20inquiry%20—%20PAIRADOX" target="_blank" rel="noopener" class="btn btn-pill btn-light" data-hover>Start a conversation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">PAIRADOX</span>
+        <p class="footer-tag">AI automations — voice agents, lead engines and workflows that run themselves.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="mono footer-col-title">INDEX</span>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#why">Why us</a>
+          <a href="#team">Team</a>
+        </div>
+        <div class="footer-col">
+          <span class="mono footer-col-title">CONNECT</span>
+          <a href="https://www.linkedin.com/in/prashasth-kamidri-794a63288/" target="_blank" rel="noopener">Prashasth — LinkedIn</a>
+          <a href="https://www.linkedin.com/in/vyshnav-katamreddy-29397a41a/" target="_blank" rel="noopener">Vyshnav — LinkedIn</a>
+          <a href="https://github.com/prashasthh" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=utdprash@gmail.com" target="_blank" rel="noopener">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom mono">
+      <span>© <span id="year"></span> PAIRADOX. ALL SYSTEMS AUTOMATED.</span>
+      <span>BUILT BY PRASHASTH &amp; VYSHNAV</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
